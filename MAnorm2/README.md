@@ -59,7 +59,35 @@ There are three choices to set interval size
 
 3.Interval size is set as FALSE. This will set all peak size as 1 for every peak
 
+```
+offset <- 0.5
+offset <- as.numeric(offset)[1]
 
+#'For condition one
+interval.size <- as.numeric(interval.size) / 1000
+
+#'For condition two
+if (interval.size[1]) {
+    if (!("start" %in% names(x))) stop("Missing \"start\" variable in x")
+    if (!("end" %in% names(x))) stop("Missing \"end\" variable in x")
+    interval.size <- (x$end - x$start) / 1000
+ 
+ #'For condition three
+ interval.size <- 1
+
+#All the code
+if (is.logical(interval.size)) {
+  if (interval.size[1]) {
+    if (!("start" %in% names(x))) stop("Missing \"start\" variable in x")
+    if (!("end" %in% names(x))) stop("Missing \"end\" variable in x")
+    interval.size <- (x$end - x$start) / 1000
+  } else {
+    interval.size <- 1
+  }
+} else {
+  interval.size <- as.numeric(interval.size) / 1000
+}
+```
 
 
 
