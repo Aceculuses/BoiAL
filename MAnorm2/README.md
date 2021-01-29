@@ -50,6 +50,10 @@ if (length(size.factor) == 2) {
 }
 base.flag <- TRUE
 ```
+# Estimate interval size
+
+
+
 # Reads Counts to Signal Intensities
 
 
