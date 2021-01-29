@@ -120,6 +120,23 @@ Generate correlation matrix for samples, and only calculate up triangle values
 |  Sample 1 |             |   Cor value  |
 |  Sample 2 |             |              |
 
+MA Pearson Correlation Coefficient ----MA.pcc
+```
+MA.pcc <- function(x, y) {
+    if (length(x) < 2) return(NA_real_)
+    a <- x + y
+    b <- y - x
+    if (sd(a) == 0 || sd(b) == 0) return(0)
+    cor(a, b, method = "pearson")
+}
+```
+|  a=x+y  | Sample 1(x)   | Sample 2(y) |    b=x-y   |
+|---------| ------------- | ----------- | -----------|
+|   25    |      16       |      9      |    7       |
+|   975   |     498       |     477     |    21      |
+|   93    |      54       |      39     |    15      |
+
+
 
 # Reference
 
