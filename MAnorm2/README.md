@@ -114,6 +114,18 @@ Select Occupancy of baseline sample
 0 for no peak, 1 for yes peak
 
 Generate correlation matrix for samples, and only calculate up triangle values
+```
+j <- length(cnt)
+    MA.cor <- matrix(0, nrow = j, ncol = j)
+    rownames(MA.cor) <- colnames(MA.cor) <- names(cnt)
+    for (i in 1:j) {
+        for (k in i:j) {
+            if (k == i) next
+            flag <- occupancy[[i]] & occupancy[[k]] & common.peak.regions
+            MA.cor[i, k] <- MA.pcc(cnt[[i]][flag], cnt[[k]][flag])
+        }
+    }
+```
 
 |           |   Sample 1  |    Sample 2  |
 |-----------|-------------|--------------|
@@ -155,6 +167,32 @@ flag <- base.ocupy & occupancy[[i]]
 #'The number of common peaks
 norm.coef$common.peak.regions[i] <- sum(flag)
 ```
+```
+#' Deduce MA Normalization Coefficients
+#'
+#' @param baseline A numeric vector representing the baseline signal intensity.
+#' @param to.norm A numeric vector representing the sample to be normalized.
+#' @return \code{c(slope, intercept)}
+normCoef <- function(baseline, to.norm) {
+    if (length(baseline) < 2) {
+        stop("Too few common peak regions to perform the MA normalization", call. = FALSE)
+    }
+    m1 <- mean(baseline)
+    m2 <- mean(to.norm)
+    s1 <- sd(baseline)
+    s2 <- sd(to.norm)
+    if (s1 == 0 && s2 == 0) return(c(1, m1 - m2))
+    if (s1 == 0 || s2 == 0) {
+        stop("Common peak regions are associated with constant signal intensities in some sample.
+Unable to perform the MA normalization", call. = FALSE)
+    }
+    slope <- s1 / s2
+    intercept <- m1 - slope * m2
+    c(slope, intercept)
+}
+```
+
+
 
 
 # Reference
