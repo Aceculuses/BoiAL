@@ -89,12 +89,17 @@ if (is.logical(interval.size)) {
 }
 ```
 
-
-
-
-
-
 # Reads Counts to Signal Intensities
+
+```
+convert <- function(y){ log(y / interval.size + offset, base = 2) }
+```
+
+
+
+
+
+
 
 
 # Reference
