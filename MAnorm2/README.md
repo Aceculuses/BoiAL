@@ -12,7 +12,7 @@ The example CHIP-seq count table
 | 54         |      39     |
 
 ```
-ref <- apply(counts, 1, function(x){ exp(mean(log(x))) })
+ref <- apply(counts, 1, function(x){ exp(mean(log(x))) }) #base = e
 ```
 | Sample 1   | Sample 2    |                y            |    ref            |      
 | ---------- | ----------- | ----------------------------|-------------------|
