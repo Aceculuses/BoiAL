@@ -16,9 +16,9 @@ ref <- apply(counts, 1, function(x){ exp(mean(log(x))) }) #base = e
 ```
 | Sample 1   | Sample 2    |                y            |    ref            |      
 |------------|-------------|-----------------------------|-------------------|
-| log(16)    | log(9)      |  -> y1=log(16)+log(9) / 2   |  ->  ref1=exp(y1) |
-| log(498)   | log(477)    |  -> y2=log(498)+log(477) / 2|  ->  ref2=exp(y2) |
-| log(54))   | log(39)     |  -> y3=log(54)+log(39) / 2  |  ->  ref3=exp(y3) |
+| log(16)    | log(9)      |  y1=log(16)+log(9) / 2      |  ref1=exp(y1)     |
+| log(498)   | log(477)    |  y2=log(498)+log(477) / 2   |  ref2=exp(y2)     |
+| log(54))   | log(39)     |  y3=log(54)+log(39) / 2     |  ref3=exp(y3)     |
 
 ```
 sizeFactor <- apply(counts, 2, function(x){ median(x / ref, na.rm = TRUE) })
