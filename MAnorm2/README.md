@@ -141,6 +141,15 @@ MA.pcc(a, b)
 
 # MA Normalization Coefficients Matrix
 Set flag for common peak regions. 
+```
+flag <- base.ocupy & occupancy[[i]]
+```
+
+| Baseline sample   |   sample    |    flag    |    peaks    |
+| ----------------- | ----------- |------------|-------------|
+| 0                 |      1      |   FALSE    |   Different |
+| 1                 |      1      |   TRUE     |   Common    |
+| 0                 |      0      |   FALSE    |   Different |
 
 
 
