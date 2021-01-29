@@ -75,7 +75,7 @@ if (interval.size[1]) {
  #'For condition three
  interval.size <- 1
 
-#All the code
+#'All the code
 if (is.logical(interval.size)) {
   if (interval.size[1]) {
     if (!("start" %in% names(x))) stop("Missing \"start\" variable in x")
