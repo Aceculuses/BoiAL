@@ -113,11 +113,11 @@ Select Occupancy of baseline sample
 
 0 for no peak, 1 for yes peak
 
-Generate correlation matrix for samples
+Generate correlation matrix for samples, and only calculate up triangle values
 
 |           |   Sample 1  |    Sample 2  |
 |-----------|-------------|--------------|
-|  Sample 1 |             |              |
+|  Sample 1 |             |   Cor value  |
 |  Sample 2 |             |              |
 
 
