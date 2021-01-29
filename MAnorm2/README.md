@@ -1,7 +1,7 @@
-# MAnorm2 algorithm 
+# MAnorm2 Algorithm 
 
 
-# Estimate Size factor
+# Estimate Size Factor
 
 The example CHIP-seq count table
 
@@ -50,7 +50,7 @@ if (length(size.factor) == 2) {
 }
 base.flag <- TRUE
 ```
-# Estimate interval size
+# Estimate Interval Size
 There are three choices to set interval size
 
 1.Interval size can be self-define number such 300bp
@@ -101,7 +101,7 @@ convert <- function(y){ log(y / interval.size + offset, base = 2) }
 | 498         |   log2((498/1)+0.5) |
 | 54          |   log2((54/1)+0.5)  |
 
-# MA normalization
+# MA Normalization
 
 Select Occupancy of baseline sample 
 
@@ -113,6 +113,12 @@ Select Occupancy of baseline sample
 
 0 for no peak, 1 for yes peak
 
+Generate correlation matrix for samples
+
+|           |   Sample 1  |    Sample 2  |
+|-----------|-------------|--------------|
+|  Sample 1 |             |              |
+|  Sample 2 |             |              |
 
 
 # Reference
