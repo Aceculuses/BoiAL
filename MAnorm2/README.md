@@ -199,12 +199,20 @@ Unable to perform the MA normalization", call. = FALSE)
 |mean1              |    mean2          |              |   mean1 - (sd1 / sd2) * mean2 | 
 |sd1                |    sd2            |    sd1 / sd2 |                               |
 
-Linear normalization for read counts
+Linear normalization for read counts. 
 ```
 #' res[1] <- slope, res[2] <- intercept
 #'y <- x * slope + intercept
+if (i == baseline) next
 cnt[[i]] <- cnt[[i]] * res[1] + res[2]
 ```
+| Baseline sample   | to.norm sample    |      slope   |     intercept                 |      linear normalization        |
+| ----------------- | ----------------- |--------------|-------------------------------|----------------------------------|
+| 16                |      9            |              |                               |      y1=9 * slope + intercept    |
+| 498               |     477           |              |                               |      y2=477 * slope + intercept  |
+| 54                |      39           |              |                               |      y3=39 * slope + intercept   |
+|mean1              |    mean2          |              |   mean1 - (sd1 / sd2) * mean2 |                                  |
+|sd1                |    sd2            |    sd1 / sd2 |                               |                                  |
 
 # Reference
 
