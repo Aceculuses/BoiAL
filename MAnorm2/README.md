@@ -199,14 +199,14 @@ Unable to perform the MA normalization", call. = FALSE)
 |mean1                        |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |
 |sd1                          |    sd2                    |    sd1 / sd2 |                               |            
 
-Linear normalization for read counts. 
+Linear Normalization for Signal Intensities. 
 ```
 #' res[1] <- slope, res[2] <- intercept
 #'y <- x * slope + intercept
 if (i == baseline) next
 cnt[[i]] <- cnt[[i]] * res[1] + res[2]
 ```
-| Baseline Sample Intensities | to.norm Sample Intensities|      slope   |     intercept                 |      linear normalization        |
+| Baseline Sample Intensities | to.norm Sample Intensities|    Slope     |     Intercept                 |      Linear Normalization        |
 | ----------------------------|---------------------------|--------------|-------------------------------|----------------------------------|
 | s1=log2((16/1)+0.5)         | x1=log2((9/1)+0.5)        |              |                               |      y1=x1 * slope + intercept   |
 | s2=log2((498/1)+0.5)        | x2=log2((477/1)+0.5)      |              |                               |      y2=x2 * slope + intercept   |
