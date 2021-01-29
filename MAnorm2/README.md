@@ -140,7 +140,7 @@ MA.pcc <- function(x, y) {
 MA.pcc(a, b)
 
 # MA Normalization Coefficients Matrix
-Set flag
+Set flag for common peak regions. 
 
 
 
