@@ -199,8 +199,12 @@ Unable to perform the MA normalization", call. = FALSE)
 |mean1              |    mean2          |              |   mean1 - (sd1 / sd2) * mean2 | 
 |sd1                |    sd2            |    sd1 / sd2 |                               |
 
-
-
+Linear normalization for read counts
+```
+#' res[1] <- slope, res[2] <- intercept
+#'y <- x * slope + intercept
+cnt[[i]] <- cnt[[i]] * res[1] + res[2]
+```
 
 # Reference
 
