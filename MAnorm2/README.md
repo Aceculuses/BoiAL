@@ -151,7 +151,10 @@ flag <- base.ocupy & occupancy[[i]]
 | 1                 |      1      |   TRUE     |   Common    |
 | 0                 |      0      |   FALSE    |   Different |
 
-
+```
+#'The number of common peaks
+norm.coef$common.peak.regions[i] <- sum(flag)
+```
 
 
 # Reference
