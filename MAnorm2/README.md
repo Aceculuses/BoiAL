@@ -137,7 +137,7 @@ MA.pcc <- function(x, y) {
 |   93    |      54       |      39     |    15      |
 |  sd(a)  |               |             |   sd(b)    |
 
-
+MA.cor(a, b, method = "pearson")
 
 # Reference
 
