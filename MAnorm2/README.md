@@ -103,7 +103,15 @@ convert <- function(y){ log(y / interval.size + offset, base = 2) }
 
 # MA normalization
 
+Select Occupancy of baseline sample 
 
+| Peaks   |     occupancy   |
+|---------|-----------------|
+|  1      |       0         |
+|  2      |       1         |
+|  3      |       2         |
+
+0 for no peak, 1 for yes peak
 
 
 
