@@ -35,6 +35,22 @@ sizeFactor <- apply(counts, 2, function(x){ median(x / ref, na.rm = TRUE) })
 |     477     |  y2=477 / ref2 |median(y1,y2,y3)  |
 |     39      |  y3=39 / ref3  |                  |
 
+Determine which size factor are used, and the baseline is the chosen size factor
+```
+if (all(is.na(size.factor))) {
+  stop("Failed to estimate the size factors of samples.
+You may specify the baseline sample explicitly")
+}
+if (length(size.factor) == 2) {
+  # To avoid numeric uncertainty when the two size factors
+  # are reciprocal to each other
+  baseline <- which.min(size.factor)
+} else {
+  baseline <- which.min(abs(log(size.factor)))
+}
+base.flag <- TRUE
+```
+
 # Reference
 
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
