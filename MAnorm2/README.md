@@ -109,7 +109,7 @@ Select Occupancy of baseline sample
 |---------|-----------------|
 |  1      |       0         |
 |  2      |       1         |
-|  3      |       2         |
+|  3      |       0         |
 
 0 for no peak, 1 for yes peak
 
@@ -130,11 +130,11 @@ MA.pcc <- function(x, y) {
     cor(a, b, method = "pearson")
 }
 ```
-|  a=x+y  | Sample 1(x)   | Sample 2(y) |    b=x-y   |
+|  a=x+y  | Sample 1(x)   | Sample 2(y) |    b=y-x   |
 |---------| ------------- | ----------- | -----------|
-|   25    |      16       |      9      |    7       |
-|   975   |     498       |     477     |    21      |
-|   93    |      54       |      39     |    15      |
+|   25    |      16       |      9      |    -7      |
+|   975   |     498       |     477     |    -21     |
+|   93    |      54       |      39     |    -15     |
 |  sd(a)  |               |             |   sd(b)    |
 
 MA.pcc(a, b)
