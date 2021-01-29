@@ -191,6 +191,13 @@ Unable to perform the MA normalization", call. = FALSE)
     c(slope, intercept)
 }
 ```
+| Baseline sample   | to.norm sample    |      slope   |     intercept                 |  
+| ----------------- | ----------------- |--------------|-------------------------------| 
+| 16                |      9            |              |                               |
+| 498               |     477           |              |                               |
+| 54                |      39           |              |                               |
+|mean1              |    mean2          |              |   mean1 - (sd1 / sd2) * mean2 | 
+|sd1                |    sd2            |    sd1 / sd2 |                               |
 
 
 
