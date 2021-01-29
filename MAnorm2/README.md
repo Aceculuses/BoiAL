@@ -206,13 +206,13 @@ Linear normalization for read counts.
 if (i == baseline) next
 cnt[[i]] <- cnt[[i]] * res[1] + res[2]
 ```
-| Baseline sample   | to.norm sample    |      slope   |     intercept                 |      linear normalization        |
-| ----------------- | ----------------- |--------------|-------------------------------|----------------------------------|
-| 16                |      9            |              |                               |      y1=9 * slope + intercept    |
-| 498               |     477           |              |                               |      y2=477 * slope + intercept  |
-| 54                |      39           |              |                               |      y3=39 * slope + intercept   |
-|mean1              |    mean2          |              |   mean1 - (sd1 / sd2) * mean2 |                                  |
-|sd1                |    sd2            |    sd1 / sd2 |                               |                                  |
+| Baseline Sample Intensities| to.norm Sample Intensities|      slope   |     intercept                 |      linear normalization        |
+| ---------------------------|---------------------------|--------------|-------------------------------|----------------------------------|
+| s1=log((16/1)+0.5)         | x1=log((9/1)+0.5)         |              |                               |      y1=x1 * slope + intercept   |
+| s2=log((498/1)+0.5)        | x2=log((477/1)+0.5)       |              |                               |      y2=x2 * slope + intercept   |
+| s3=log((54/1)+0.5)         | x3=log((39/1)+0.5)        |              |                               |      y3=x3 * slope + intercept   |
+|mean1                       |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |                                  |
+|sd1                         |    sd2                    |    sd1 / sd2 |                               |                                  |
 
 # Reference
 
