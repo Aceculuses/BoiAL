@@ -35,7 +35,7 @@ sizeFactor <- apply(counts, 2, function(x){ median(x / ref, na.rm = TRUE) })
 |     477     |  y2=477 / ref2 |median(y1,y2,y3)  |
 |     39      |  y3=39 / ref3  |                  |
 
-Determine which size factor are used, and the baseline is the chosen size factor, baseline is the index of the chosen size factor
+Determine which size factor are used, and the baseline is the chosen size factor, baseline is the index of the chosen size factor, which is refer to baseline samples. eg. baseline <- which.min(abs(log(size.factor))) =1, means sample1 is the baseline sample to be compared with
 ```
 if (all(is.na(size.factor))) {
   stop("Failed to estimate the size factors of samples.
