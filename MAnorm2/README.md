@@ -101,7 +101,7 @@ convert <- function(y){ log(y / interval.size + offset, base = 2) }
 | 498         |   log2((498/1)+0.5) |
 | 54          |   log2((54/1)+0.5)  |
 
-# MA Normalization
+# MA Correlation Matrix
 
 Select Occupancy of baseline sample 
 
@@ -138,6 +138,12 @@ MA.pcc <- function(x, y) {
 |  sd(a)  |               |             |   sd(b)    |
 
 MA.pcc(a, b)
+
+# MA Normalization Coefficients Matrix
+Set flag
+
+
+
 
 # Reference
 
