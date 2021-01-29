@@ -191,13 +191,13 @@ Unable to perform the MA normalization", call. = FALSE)
     c(slope, intercept)
 }
 ```
-| Baseline sample   | to.norm sample    |      slope   |     intercept                 |  
-| ----------------- | ----------------- |--------------|-------------------------------| 
-| 16                |      9            |              |                               |
-| 498               |     477           |              |                               |
-| 54                |      39           |              |                               |
-|mean1              |    mean2          |              |   mean1 - (sd1 / sd2) * mean2 | 
-|sd1                |    sd2            |    sd1 / sd2 |                               |
+| Baseline Sample Intensities | to.norm Sample Intensities|      slope   |     intercept                 |
+| ----------------------------|---------------------------|--------------|-------------------------------|
+| s1=log2((16/1)+0.5)         | x1=log2((9/1)+0.5)        |              |                               |  
+| s2=log2((498/1)+0.5)        | x2=log2((477/1)+0.5)      |              |                               |   
+| s3=log2((54/1)+0.5)         | x3=log2((39/1)+0.5)       |              |                               |
+|mean1                        |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |
+|sd1                          |    sd2                    |    sd1 / sd2 |                               |            
 
 Linear normalization for read counts. 
 ```
@@ -206,29 +206,16 @@ Linear normalization for read counts.
 if (i == baseline) next
 cnt[[i]] <- cnt[[i]] * res[1] + res[2]
 ```
-| Baseline Sample Intensities| to.norm Sample Intensities|      slope   |     intercept                 |      linear normalization        |
-| ---------------------------|---------------------------|--------------|-------------------------------|----------------------------------|
-| s1=log((16/1)+0.5)         | x1=log((9/1)+0.5)         |              |                               |      y1=x1 * slope + intercept   |
-| s2=log((498/1)+0.5)        | x2=log((477/1)+0.5)       |              |                               |      y2=x2 * slope + intercept   |
-| s3=log((54/1)+0.5)         | x3=log((39/1)+0.5)        |              |                               |      y3=x3 * slope + intercept   |
-|mean1                       |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |                                  |
-|sd1                         |    sd2                    |    sd1 / sd2 |                               |                                  |
+| Baseline Sample Intensities | to.norm Sample Intensities|      slope   |     intercept                 |      linear normalization        |
+| ----------------------------|---------------------------|--------------|-------------------------------|----------------------------------|
+| s1=log2((16/1)+0.5)         | x1=log2((9/1)+0.5)        |              |                               |      y1=x1 * slope + intercept   |
+| s2=log2((498/1)+0.5)        | x2=log2((477/1)+0.5)      |              |                               |      y2=x2 * slope + intercept   |
+| s3=log2((54/1)+0.5)         | x3=log2((39/1)+0.5)       |              |                               |      y3=x3 * slope + intercept   |
+|mean1                        |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |                                  |
+|sd1                          |    sd2                    |    sd1 / sd2 |                               |                                  |
+
 
 # Reference
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
 
 
