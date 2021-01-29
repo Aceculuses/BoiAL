@@ -52,9 +52,14 @@ base.flag <- TRUE
 ```
 # Estimate interval size
 There are three choices to set interval size
+
 1.Interval size can be self-define number such 300bp
+
 2.Interval size is set as TRUE. This will calculate each peak size
+
 3.Interval size is set as FALSE. This will set all peak size as 1 for every peak
+
+
 
 
 
