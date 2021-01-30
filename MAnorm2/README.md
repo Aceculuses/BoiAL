@@ -225,6 +225,15 @@ x - baseline samole
 
 y - comparison sample
 
+| Baseline Sample Intensities | to.norm Sample Intensities|    Slope     |     Intercept                 |      Linear Normalization      |    M     |     A      |
+| ----------------------------|---------------------------|--------------|-------------------------------|--------------------------------|-----  ---|------------| 
+| s1=log2((16/1)+0.5)         | x1=log2((9/1)+0.5)        |              |                               |      y1=x1 * slope + intercept |  y1 - s1 | (y1+s1) / 2|
+| s2=log2((498/1)+0.5)        | x2=log2((477/1)+0.5)      |              |                               |      y2=x2 * slope + intercept |  y2 - s2 | (y2+s2) / 2|
+| s3=log2((54/1)+0.5)         | x3=log2((39/1)+0.5)       |              |                               |      y3=x3 * slope + intercept |  y3 - s3 | (y3+s3) / 2|
+|mean1                        |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |                                |          |            |
+|sd1                          |    sd2                    |    sd1 / sd2 |                               |                                |          |            |
+
+
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
 
