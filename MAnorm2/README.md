@@ -199,7 +199,7 @@ Unable to perform the MA normalization", call. = FALSE)
 |mean1                        |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |
 |sd1                          |    sd2                    |    sd1 / sd2 |                               |            
 
-Linear Normalization for Signal Intensities. 
+# Linear Normalization for Signal Intensities. 
 ```
 #' res[1] <- slope, res[2] <- intercept
 #'y <- x * slope + intercept
@@ -214,6 +214,9 @@ cnt[[i]] <- cnt[[i]] * res[1] + res[2]
 |mean1                        |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |                                  |
 |sd1                          |    sd2                    |    sd1 / sd2 |                               |                                  |
 
+# MA plot
+M - minus 
+A - Add 
 
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
