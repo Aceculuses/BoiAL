@@ -216,7 +216,14 @@ cnt[[i]] <- cnt[[i]] * res[1] + res[2]
 
 # MA plot
 M - minus 
-A - Add 
+
+A (add) =  (log2(y) + log2(x)) / 2
+
+M (minus) = log2(y) - log(x) = log2(y/x) = log fold change
+
+x - baseline samole
+
+y - comparison sample
 
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
