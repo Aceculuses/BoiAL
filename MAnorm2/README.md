@@ -219,7 +219,7 @@ M - minus
 
 A (add) =  (log2(y) + log2(x)) / 2
 
-M (minus) = log2(y) - log(x) = log2(y/x) = log fold change
+M (minus, log fold change) = log2(y) - log(x) = log2(y/x) 
 
 x - baseline samole
 
