@@ -306,6 +306,7 @@ scale.var <- 1 / rep_len(vapply(inv.strMatrix, sum, numeric(1)), length.out = n)
 |    1 / 2     |          n       |
 
 Set IntervalMeans
+
 Signal1 * weight1 + Signal2 * weight2
 
 Norm.signal
@@ -355,7 +356,7 @@ coef
 
 ```
 weight1 = weight2 = 0.5
-Signal1 * weight1 + Signal2 * weight2
+IntervalMeans = Signal1 * weight1 + Signal2 * weight2
 ```
 
 | sample 1 |  sample 2 |   coef_sample1  |  coef_sample2   |     IntervalMeans       |
@@ -364,6 +365,8 @@ Signal1 * weight1 + Signal2 * weight2
 |   8.93   |    8.89   |      0.5        |     0.5         |  8.93 * 0.5 + 8.89 * 0.5|
 |   5.76   |    5.30   |      0.5        |     0.5         |  5.76 * 0.5 + 5.30 * 0.5|
 
+
+Set sample.var
 
 
 
