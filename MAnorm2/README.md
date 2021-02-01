@@ -433,7 +433,8 @@ z = s %*% t(y)
 |[2,]|                                   |                                    |   |  3.24  |   |                                      |
 
 df = (ncol(x) - 1)
-intervals = z / df 
+
+intervalVars = z / df 
 
 
 
