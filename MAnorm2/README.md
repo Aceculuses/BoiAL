@@ -270,7 +270,41 @@ weight = NULL
 strMatrix = NUL
 x <- list(name = name, norm.signal = norm.signal, occupancy = occupancy)
 setWeight(x, weight = weight, strMatrix = strMatrix)
+
+By default, all the ChIP-seq samples belonging to the bioCond have the same weight for
+estimating the mean signal intensities of genomic intervals
+
+weight <- matrix(1, nrow = 1, ncol = m)  # Same weight
 ```
+|      w1    |      w2    |
+|------------|------------|
+|      1     |      1     |
+
+```
+Set inverse Matrix of strMatrix
+strMatrix * inv.strMatrix = 1
+inv.strMatrix <- lapply(strMatrix, solve)
+```
+scale.var
+
+```
+vapply(inv.strMatrix, sum, numeric(1)
+```
+|    inv.strMatrix|  |    vapply(inv.strMatrix, sum, numeric(1) |
+|---------|----------|------------------------------------------|
+|     1   |     0    |             2                            |
+|     0   |     1    |                                          |
+
+```
+scale.var <- 1 / rep_len(vapply(inv.strMatrix, sum, numeric(1)), length.out = n)
+```
+|  scale.var   |
+|    1 / 2     |
+|    1 / 2     |
+|     ...      | 
+
+
+
 
 
 
