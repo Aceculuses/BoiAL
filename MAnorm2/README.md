@@ -439,6 +439,23 @@ intervalVars = z / df
 
 # normBioCond
 
+Signal sample.mean are calculated by biocond which stands for interValmeans. Occupancy is calculated before. 
+
+interValmeans
+
+|    s1     |     s2    |
+|-----------|-----------|
+|   3.64    |    4.37   |
+|   8.91    |    8.84   |  
+|   5.53    |    5.28   |
+
+Occupancy
+
+|  o1   |    o2  |
+|-------|--------|
+|FALSE  |   TRUE |
+|TRUE   |   TRUE |
+|FALSE  |   TRUE |
 
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
