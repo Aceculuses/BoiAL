@@ -305,8 +305,15 @@ scale.var <- 1 / rep_len(vapply(inv.strMatrix, sum, numeric(1)), length.out = n)
 |     ...      |         ...      |
 |    1 / 2     |          n       |
 
+Set IntervalMeans
 
+Norm.signal
 
+| sample 1 |  sample 2 |
+|----------|-----------|
+|   4.05   |    3.24   |
+|   8.93   |    8.89   |
+|   5.76   |    5.30   |
 
 
 
