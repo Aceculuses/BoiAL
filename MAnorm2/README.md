@@ -327,6 +327,20 @@ coef <- lapply(inv.strMatrix, function(m) {
 |     1   |     0     |       1     |     2    |   0.5   |
 |     0   |     1     |       1     |          |   0.5   |
 
+```
+n <- length(inv.strMatrix) # n = 1 
+index <- rep_len(1:n, length.out = nrow(norm.signal))
+```
+|   index   |
+|-----------|
+|    1      |
+|    1      |
+
+```
+x <- norm.signal
+vapply(1:nrow(x), function(i) {sum(x[i, ] * coef[[index[i]]])}, numeric(1))
+```
+
 
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
