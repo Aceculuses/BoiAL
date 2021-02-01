@@ -322,7 +322,7 @@ coef <- lapply(inv.strMatrix, function(m) {
     })
 ```
 
-|  inv.strMatrix|  -  |  colSums(m) |  sum(y)  |   coef  |
+|  inv.strMatrix|  .  |  colSums(m) |  sum(y)  |   coef  |
 |---------|-----------|-------------|----------|---------|
 |     1   |     0     |       1     |     2    |   0.5   |
 |     0   |     1     |       1     |          |   0.5   |
