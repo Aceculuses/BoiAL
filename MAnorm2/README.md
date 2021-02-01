@@ -315,6 +315,17 @@ Norm.signal
 |   8.93   |    8.89   |
 |   5.76   |    5.30   |
 
+```
+coef <- lapply(inv.strMatrix, function(m) {
+        y <- colSums(m)
+        y / sum(y)
+    })
+```
+
+|  inv.strMatrix|  -  |  colSums(m) |  sum(y)  |   coef  |
+|---------|-----------|-------------|----------|---------|
+|     1   |     0     |       1     |     2    |   0.5   |
+|     0   |     1     |       1     |          |   0.5   |
 
 
 # Reference
