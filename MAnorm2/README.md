@@ -341,6 +341,26 @@ index <- rep_len(1:n, length.out = nrow(norm.signal))
 x <- norm.signal
 vapply(1:nrow(x), function(i) {sum(x[i, ] * coef[[index[i]]])}, numeric(1))
 ```
+coef 
+|   sample 1  |   sample 2   |
+|-------------|--------------|
+|      0.5    |      0.5     |
+
+|   n   |  index |  index[n] |           coef[index[n]]             |    
+|-------|--------|-----------|--------------------------------------|
+|   1   |    1   |index[1]= 1|   coef[index[1]] = coef[1] = 0.5, 0.5|
+|   2   |    1   |index[2]= 1|   coef[index[2]] = coef[1] = 0.5, 0.5|
+|   3   |    1   |index[3]= 1|   coef[index[3]] = coef[1] = 0.5, 0.5|
+
+
+| sample 1 |  sample 2 |   coef_sample1  |  coef_sample2   |     IntervalMeans       |
+|----------|-----------|-----------------|-----------------|-------------------------|
+|   4.05   |    3.24   |      0.5        |     0.5         |  4.05 * 0.5 + 3.24 * 0.5|
+|   8.93   |    8.89   |      0.5        |     0.5         |  8.93 * 0.5 + 8.89 * 0.5|
+|   5.76   |    5.30   |      0.5        |     0.5         |  5.76 * 0.5 + 5.30 * 0.5|
+
+
+
 
 
 # Reference
