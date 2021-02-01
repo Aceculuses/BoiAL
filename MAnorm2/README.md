@@ -204,7 +204,8 @@ Unable to perform the MA normalization", call. = FALSE)
 # Linear Normalization for Signal Intensities. 
 ```
 #' res[1] <- slope, res[2] <- intercept
-#'y <- x * slope + intercept
+#'y = ax + b
+#'y <- slope * x + intercept
 if (i == baseline) next
 cnt[[i]] <- cnt[[i]] * res[1] + res[2]
 ```
@@ -237,6 +238,29 @@ y - comparison sample
 
 
 # Between group normalization
+
+Set Occupancy
+
+```
+num <- apply(occupancy, 1, function(y){ sum(as.logical(y), na.rm = TRUE) })
+```
+| Sample1_Occupancy   |     Sample2_Occupancy   |    num   |
+|---------------------|-------------------------|----------|
+|          0          |           0             |     0    |
+|          1          |           1             |     2    |
+|          1          |           0             |     1    |
+
+```
+occupy.num =  1
+occupy.num <- as.numeric(occupy.num)
+occupy.num <- rep_len(occupy.num, length.out = length(num))
+```
+|   occupy.num   |
+|----------------|
+|       1        |
+|       1        |
+|       1        |
+|      ...       |
 
 
 
