@@ -335,6 +335,7 @@ index <- rep_len(1:n, length.out = nrow(norm.signal))
 |-----------|
 |    1      |
 |    1      |
+|    1      |
 
 ```
 x <- norm.signal
