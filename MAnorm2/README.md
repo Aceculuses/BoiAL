@@ -252,15 +252,15 @@ num <- apply(occupancy, 1, function(y){ sum(as.logical(y), na.rm = TRUE) })
 
 ```
 occupy.num =  1
+length(num) = 3
 occupy.num <- as.numeric(occupy.num)
 occupy.num <- rep_len(occupy.num, length.out = length(num))
 ```
-|   occupy.num   |
-|----------------|
-|       1        |
-|       1        |
-|       1        |
-|      ...       |
+|   occupy.num   |      num    |     num >= occupy.num   |    occupancy   |
+|----------------|-------------|-------------------------|----------------|
+|       1        |      0      |         FALSE           |      FALSE     |
+|       1        |      2      |         TRUE            |      TRUE      |
+|       1        |      1      |         TRUE            |      TRUE      |
 
 
 
