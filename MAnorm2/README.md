@@ -1,6 +1,8 @@
 # MAnorm2 Algorithm 
 
 
+# Within group normalization
+
 # Estimate Size Factor
 
 The example CHIP-seq count table
@@ -232,6 +234,10 @@ y - comparison sample
 | s3=log2((54/1)+0.5)         | x3=log2((39/1)+0.5)       |              |                               |      y3=x3 * slope + intercept |  y3 - s3 | (y3+s3) / 2|
 |mean1                        |    mean2                  |              |   mean1 - (sd1 / sd2) * mean2 |                                |          |            |
 |sd1                          |    sd2                    |    sd1 / sd2 |                               |                                |          |            |
+
+
+# Between group normalization
+
 
 
 # Reference
