@@ -436,13 +436,7 @@ df = (ncol(x) - 1)
 
 intervalVars = z / df 
 
-
-
-
-
-
-
-
+# normBioCond
 
 
 # Reference
