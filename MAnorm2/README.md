@@ -239,6 +239,7 @@ y - comparison sample
 
 # Between group normalization
 
+# bioCond
 Set Occupancy
 
 ```
