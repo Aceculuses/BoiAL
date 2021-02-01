@@ -285,7 +285,7 @@ Set inverse Matrix of strMatrix
 strMatrix * inv.strMatrix = 1
 inv.strMatrix <- lapply(strMatrix, solve)
 ```
-scale.var
+Set scale.var
 
 ```
 vapply(inv.strMatrix, sum, numeric(1)
@@ -298,10 +298,12 @@ vapply(inv.strMatrix, sum, numeric(1)
 ```
 scale.var <- 1 / rep_len(vapply(inv.strMatrix, sum, numeric(1)), length.out = n)
 ```
-|  scale.var   |
-|    1 / 2     |
-|    1 / 2     |
-|     ...      | 
+|  scale.var   |    length.out(n) |
+|--------------|------------------|
+|    1 / 2     |          1       |
+|    1 / 2     |          2       |
+|     ...      |         ...      |
+|    1 / 2     |          n       |
 
 
 
