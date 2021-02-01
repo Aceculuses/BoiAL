@@ -457,6 +457,71 @@ Occupancy
 |TRUE   |   TRUE |
 |FALSE  |   TRUE |
 
+```
+subset <- apply(occupancy, 1, all)
+```
+| subset  |
+|---------|
+|  FALSE  |
+|  TRUE   |
+|  FALSE  |
+
+```
+#Select the overlapping signal, the signals stand for common peaks
+#Normalize common peaks between two groups
+temp <- signal[subset, , drop = FALSE]
+ref <- rowMeans(temp)
+```
+temp (common peaks)
+
+|  s1  |   s2  |   ref  |
+|------|-------|--------|
+| 8.91 | 8.84  |  8.87  |
+| 8.39 | 8.40  |  8.39  |
+| 6.77 | 6.56  |  6.66  |
+
+```
+log2.size <- apply(temp, 2, function(x){ median(x - ref) })
+size.factor <- 2 ^ log2.size
+```
+
+|  s1  |  ref  |    logs.size  |      median    |
+|------|-------|---------------|----------------|
+| 8.91 | 8.87  |  y1=8.87-8.91 |                |
+| 8.39 | 8.39  |  y2=8.39-8.39 |median(y1,y2,y3)|
+| 6.77 | 6.66  |  y3=6.66-6.77 |                |
+
+Repeat for sample2
+
+size factor is converted by 2^
+
+baseline is chosen by min(log2.size), which is same as within group normalization process.
+
+```
+#implement same normalization algorithm 
+#convert is assigned identity which means it is no need to transfer reads count into signal intensity
+#common.peak.region is assigned common.peak.region which means we don't need to find common peaks
+norm <- normalize(temp, 1:n, (n + 1):(n * 2), baseline = baseline,convert = identity, common.peak.regions = common.peak.regions)
+```
+
+Between group normalization is same as within group process. One difference is that it normalize the common peaks between two groups. 
+The rest results are remain same. we cannot normalize unique peaks, just only for common peaks between groups.
+
+# fitMeanVarCurve
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
 
