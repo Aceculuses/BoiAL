@@ -543,7 +543,18 @@ obs.vars
 | 0.00074 |   0.00776 |
 |   0.12  |   0.074   |
 
+```
+temp <- lapply(conds[!noRep], function(cond){ cond$occupancy })
+subset <- apply(as.data.frame(temp), 1, all)
+```
 
+tmp, subset
+
+|   s1.o      |     s2.o    |    subset   |
+|-------------|-------------|-------------|
+|    FALSE    |    TRUE     |     FALSE   | 
+|    TRUE     |    TRUE     |     TRUE    |
+|    FALSE    |    TRUE     |     FALSE   |
 
 
 
