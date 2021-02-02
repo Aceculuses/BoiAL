@@ -507,12 +507,18 @@ norm <- normalize(temp, 1:n, (n + 1):(n * 2), baseline = baseline,convert = iden
 Between group normalization is same as within group process. One difference is that it normalize the common peaks between two groups. 
 The rest results are remain same. we cannot normalize unique peaks, just only for common peaks between groups.
 
-# fitMeanVarCurve
+# fitMeanVarCurve ---- Regression process
 
+# estimateVarRatio
 
+initialize ratio.var
 
-
-
+|  condition 1 |   condition 1 |     |   condition2 |   condition2   |
+|--------------|---------------|-----|--------------|----------------|
+|   rep1       |      rep2     |     |    rep1      |      rep2      |
+|   3.38       |      2.52     |     |    4.55      |      4.20      | 
+|   8.613      |      8.57     |     |    8.77      |      8.90      |
+|   5.21       |      4.72     |     |    5.47      |      5.08      |
 
 
 
