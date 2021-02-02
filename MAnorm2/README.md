@@ -521,8 +521,27 @@ initialize ratio.var
 |   5.21       |      4.72     |     |    5.47      |      5.08      |
 
 
+```
+# n = 2
+# m = 2,2
+#noRep = FALSE, FALSE
+n <- length(conds)
+m <- vapply(conds, function(cond){ ncol(cond$norm.signal) }, numeric(1))
+noRep <- m <= 1
 
+#var.level = NA, NA
+var.level <- rep(NA_real_, n)
 
+#sample var is calculated in biocond step, which is intervalVars
+obs.vars <- lapply(conds[!noRep], function(cond){ cond$sample.var })
+```
+obs.vars
+
+|  s1.Var |   s2.Var  |
+|---------|-----------|
+|  0.369  |   0.0618  |
+| 0.00074 |   0.00776 |
+|   0.12  |   0.074   |
 
 
 
