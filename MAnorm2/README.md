@@ -556,6 +556,50 @@ tmp, subset
 |    TRUE     |    TRUE     |     TRUE    |
 |    FALSE    |    TRUE     |     FALSE   |
 
+```
+var.level[!noRep] <- estimateSizeFactors(as.data.frame(obs.vars), subset)
+```
+Each sample size factor is calcualted by estimateSizeFactors() used before.
+
+```
+#This step is same as baseline selection.
+#base.cond is the index of minimun var.level
+base.cond <- which.min(abs(log(var.level)))
+
+#Choose baseline condition
+base.index <- base.cond
+base.cond <- conds[[base.cond]]
+```
+
+```
+varRatio <- function(cond1, cond2, invariant = NULL) {
+    if (is.null(invariant)) {
+        f <- cond1$occupancy & cond2$occupancy
+    } else {
+        invariant <- as.numeric(invariant)[1]
+        if (invariant < 0) stop("invariant must be non-negative")
+        f <- abs(cond2$sample.mean - cond1$sample.mean) <= invariant
+    }
+    if (!any(f)) return(NA_real_)
+
+    med <- median(cond2$sample.var[f] / cond1$sample.var[f], na.rm = TRUE)
+    if (is.na(med) || is.infinite(med) || med == 0) return(NA_real_)
+    med / qf(0.5, ncol(cond2$norm.signal) - 1, ncol(cond1$norm.signal) - 1)
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Reference
