@@ -618,6 +618,8 @@ qf(0.5,df1,df2) = quantile values or cut-off value.
 In this case, the quantile value can been seen as median number of F distribution.
 ```
 
+# meanVarParaFit
+
 ```
 fitMeanVarCurve <- function(conds, ratio.var = estimateVarRatio(conds),
                             method = c("parametric fit", "local regression"),
@@ -628,7 +630,14 @@ fitMeanVarCurve <- function(conds, ratio.var = estimateVarRatio(conds),
 occupy.only = TRUE. This parameter can be set as FALSE. If TURE, only common peaks is going to be fitted
 ```
 
-# meanVarParaFit
+|         |   means  |
+|---------|----------|
+| c1.mean |   2.95   |
+|         |   8.59   |
+|         |   4.97   |
+| c2.mean |   4.37   |
+|         |   8.84   |
+|         |   5.28   |
 
 
 
