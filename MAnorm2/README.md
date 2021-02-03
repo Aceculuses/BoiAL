@@ -755,6 +755,8 @@ temp <- sum(vals * weights) / sum(weights)
 ```
 ![image](https://github.com/Aceculuses/BoiAL/blob/main/MAnorm2/temp.png)
 
+# Differential Test
+
 
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
