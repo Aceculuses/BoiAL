@@ -743,6 +743,8 @@ z[[i]] <- log(vars / cond$fit.info$predict(means))
 |    v2      |      pv2         | log(v2) - log(pv2) |
 
 
+d0, termed the number of prior degrees of freedom, is a hyperparameter designed for assessing how well in general the variance of an individual interval could be predicted by its mean signal intensity
+
 
 # Reference
 Tu, S., et al., MAnorm2 for quantitatively comparing groups of ChIP-seq samples. bioRxiv, 2020: p. 2020.01.07.896894. https://doi.org/10.1101/2020.01.07.896894.
