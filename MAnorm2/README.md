@@ -723,8 +723,20 @@ In the end, a input dataset for GLM will be stablized. It is kind of shaking met
 
 As the result, we will have parameters ( intercept and slope ) for linear regression. 
 
+# setMeanVarCurve
 
+# estimatePriorDf
 
+```
+predict ( vars ) <- intercept + slope * x (means)
+
+#z, the log ratio of true vars and predicted vars
+z[[i]] <- log(vars / cond$fit.info$predict(means))
+```
+| true vars  |   predicted vars |          z         |
+|------------|------------------|--------------------|
+|    v1      |      pv1         | log(v1) - log(pv1) |
+|    v2      |      pv2         | log(v2) - log(pv2) |
 
 
 
