@@ -753,7 +753,7 @@ vals[i] <- var(x) - trigamma((m[i] - 1) / 2)
 ```
 temp <- sum(vals * weights) / sum(weights)
 ```
-
+![image](https://github.com/Aceculuses/BoiAL/blob/main/MAnorm2/temp.png)
 
 
 # Reference
