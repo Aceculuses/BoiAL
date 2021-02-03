@@ -652,6 +652,11 @@ Generalize Linear Model (GLM)
 
 This process fit means to vars, glm(vars ~ means), we assume that the data follow exponent distribution ( gamma is one of the exponent distribution family),
 One key point in GLM is to deal with errors which is not in normal distribution. 
+
+Link function
+
+a0 + a1 * x -> y1 -> link function -> y 
+link function mapped y1 to y, and y has linear relationship with the equation while y1 does not
 ```
 
 The better explanation can be found here [GLM](https://zhuanlan.zhihu.com/p/110268967)
