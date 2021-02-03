@@ -630,18 +630,31 @@ fitMeanVarCurve <- function(conds, ratio.var = estimateVarRatio(conds),
 occupy.only = TRUE. This parameter can be set as FALSE. If TURE, only common peaks is going to be fitted
 ```
 
-|         |   means  |
-|---------|----------|
-| c1.mean |   2.95   |
-|         |   8.59   |
-|         |   4.97   |
-| c2.mean |   4.37   |
-|         |   8.84   |
-|         |   5.28   |
+|         |   means  |  1 / 2 ^means  |
+|---------|----------|----------------|
+| c1.mean |   2.95   |  1 / 2 ^ 2.95  |
+|         |   8.59   |  1 / 2 ^ 8.59  |
+|         |   4.97   |  1 / 2 ^ 4.97  |
+| c2.mean |   4.37   |  1 / 2 ^ 4.37  |
+|         |   8.84   |  1 / 2 ^ 8.84  |
+|         |   5.28   |  1 / 2 ^ 5.28  |
 
 
+```
+x <- means
+y <- vars
 
+fit <- glm(y ~ x, family = Gamma(link = "identity"), subset = good, weights = weight, start = coef)
+```
 
+```
+Generalize Linear Model (GLM)
+
+This process fit means to vars, glm(vars ~ means), we assume that the data follow exponent distribution ( gamma is one of the exponent distribution family),
+One key point in GLM is to deal with errors which is not in normal distribution. 
+```
+
+The better explanation can be found here [GLM](https://zhuanlan.zhihu.com/p/110268967)
 
 
 
