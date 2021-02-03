@@ -748,7 +748,7 @@ d0, termed the number of prior degrees of freedom, is a hyperparameter designed 
 ```
 vals[i] <- var(x) - trigamma((m[i] - 1) / 2)
 ```
-
+![image](https://github.com/Aceculuses/BoiAL/blob/main/MAnorm2/vals.png)
 
 
 
