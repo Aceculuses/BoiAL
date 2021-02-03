@@ -594,6 +594,8 @@ varRatio <- function(cond1, cond2, invariant = NULL) {
 |   i2 =  5.021998e-03     |    j2 = 7.101262e-03       |  r2 = i2 / j2  | median(r1,r2,r3) |
 |   i3 =  2.379149e-02     |    j3 = 3.488587e-02       |  r3 = i3 / j3  |                  |
 
+![image](https://github.com/Aceculuses/BoiAL/blob/main/MAnorm2/varRatio.png)
+
 ```
 After median of variation ratio is calculated, We want to compare the results with F distribution,
 when the quantile is 50% to gain the variation ratio. 
