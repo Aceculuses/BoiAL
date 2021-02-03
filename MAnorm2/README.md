@@ -661,6 +661,62 @@ link function mapped y1 to y, and y has linear relationship with the equation wh
 
 The better explanation can be found here [GLM](https://zhuanlan.zhihu.com/p/110268967)
 
+After fit the model, we can have estimated slope and intercept for linear regression. 
+
+```
+coef <- coefficients(fit)
+fit.vars <- coef[1] + x * coef[2]
+residuals <- y / fit.vars
+#coef[1] = intercept
+#coef[2] = slope
+```
+|   means   |        fit.var        |    residuals   |
+|-----------|-----------------------|----------------|
+|     m1    |   f1 = i + s * m1     |   r1 = y1 / f1 |
+|     m2    |   f2 = i + s * m2     |   r2 = y2 / f2 |
+|     m3    |   f3 = i + s * m3     |   r3 = y3 / f3 |
+
+```
+# good vector is a controller of for loop
+# All elements are TRUE
+good <- (y > 0) & (!is.na(y))
+
+#
+pres.good <- good
+
+#Filtering 
+good <- (residuals >= range.residual[1]) & (residuals <= range.residual[2]) & (!is.na(residuals))
+```
+Only   1e-4 <= residuals <= 15 is TRUE, otherwise is FALSE.
+
+```
+#This step means the last loop and present loop give same results, so that we can stop the iteration before final loop
+if (all(good == pres.good)) {
+            converge <- TRUE
+            break
+        }
+        
+#This step means if coverge is FALSE, the data have not been fully converge, which means we need to increas the loops than previous one
+#if max.iter = 50, the data still not converge, we can increase it to 60 or above 
+if (!converge) {
+        warning("The parametric fit procedure does not converge", call. = FALSE)
+    } else if (verbose) {
+        cat("Converged.\n", sep = "\n")
+    }
+    
+#good is controller of the converge
+step 1: good <- [TRUE, TRUE, TRUE...]
+step 2: pres.good <- good (last loop results)
+        good <- (residuals >= range.residual[1]) & (residuals <= range.residual[2]) & (!is.na(residuals)) (current loop results)
+step 3: if (all(good == pres.good))  (Compare present and last loop results)
+
+How this coverge process perform ?
+fit <- glm(y ~ x, family = Gamma(link = "identity"), subset = good, weights = weight, start = coef)
+subset is good vector, for each loop, the subset is different from previous one, only the vars ~ means with 1e-4 <= residuals <= 15 will be keep. 
+For eahc time, the coefficient of GLM (intercept and slope ) will be different from previous one, as the input dataset is different (determined by good)
+In the end, a input dataset for GLM will be stablized. It is kind of shaking methods. 
+```
+
 
 
 
