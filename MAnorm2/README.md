@@ -709,13 +709,16 @@ step 1: good <- [TRUE, TRUE, TRUE...]
 step 2: pres.good <- good (last loop results)
         good <- (residuals >= range.residual[1]) & (residuals <= range.residual[2]) & (!is.na(residuals)) (current loop results)
 step 3: if (all(good == pres.good))  (Compare present and last loop results)
+```
 
-How this coverge process perform ?
+How this coverge process perform, a shaking method ?
+```
 fit <- glm(y ~ x, family = Gamma(link = "identity"), subset = good, weights = weight, start = coef)
+```
 subset is good vector, for each loop, the subset is different from previous one, only the vars ~ means with 1e-4 <= residuals <= 15 will be keep. 
 For eahc time, the coefficient of GLM (intercept and slope ) will be different from previous one, as the input dataset is different (determined by good)
 In the end, a input dataset for GLM will be stablized. It is kind of shaking methods. 
-```
+
 
 
 
