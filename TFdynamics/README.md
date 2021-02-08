@@ -5,7 +5,9 @@
 ![image](https://github.com/Aceculuses/BoiAL/blob/main/TFdynamics/venn.hyper.png)
 
 B = 10 genes
+
 C = 8 genes
+
 overlap = 2
 
 To calculate p-value of overlap genes
